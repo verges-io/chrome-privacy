@@ -18,4 +18,4 @@ docker run --rm -it \
     -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket:ro \
     -v /dev/shm:/dev/shm \
     --name chrome \
-    verges-io/chrome-privacy
+    sotapanna108/chrome-privacy

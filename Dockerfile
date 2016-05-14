@@ -25,9 +25,11 @@ RUN echo 'deb http://httpredir.debian.org/debian testing main' >> /etc/apt/sourc
     apt-get update && apt-get install -y \
     ca-certificates \
     curl \
+    tor \
     hicolor-icon-theme \
     libgl1-mesa-dri \
     libgl1-mesa-glx \
+    libexif-dev \
     libv4l-0 \
     -t testing \
     fonts-symbola \
@@ -45,8 +47,11 @@ RUN echo 'deb http://httpredir.debian.org/debian testing main' >> /etc/apt/sourc
 COPY local.conf /etc/fonts/local.conf
 ADD chrome-state /data
 
+RUN \
+    mkdir -p /root/parent_home && \
+    chmod -R 777 /root/parent_home
+
 # Autorun chrome
 ENTRYPOINT [ "google-chrome" ]
 CMD [ "--user-data-dir=/data", "--disable-sync", "--incognito" ]
-
-#"--disable-accelerated-mjpeg-decode", "--disable-accelerated-video-decode" ]
+#CMD [ "--user-data-dir=/data", "--disable-sync" ]

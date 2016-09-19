@@ -1,5 +1,8 @@
 # chrome-privacy
 
+[![](https://images.microbadger.com/badges/version/sotapanna108/chrome-privacy.svg)](https://microbadger.com/images/sotapanna108/chrome-privacy "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/sotapanna108/chrome-privacy.svg)](https://microbadger.com/images/sotapanna108/chrome-privacy "Get your own image badge on microbadger.com")
+
 ## Basics
 
 A dockerized Chrome in privacy mode, based in jfrazelle's Dockerfile.

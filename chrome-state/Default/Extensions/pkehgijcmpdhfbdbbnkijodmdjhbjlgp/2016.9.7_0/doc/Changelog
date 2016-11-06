@@ -1,0 +1,100 @@
+Changes for Privacy Badger 
+====================================
+## 2016.9.7
+* Add exceptions for multi domain first parties
+* Fix google drive download issue
+* Fix wikipedia login issue
+* Fix youtube comments and notifications issues
+* Several other broken site fixes
+* Hopefully a fix for the "corrupted extension" issue
+
+## 2016.8.29
+* UI Tweaks
+* Remove last adblock plus code
+* Feature: remove domains from list
+* Refactor incognito mode handling
+* Compatibile with firefox web extensions
+
+## 2016.5.24 (2.0RC3)
+* Fix build error
+
+## 2016.5.23 (2.0RC2)
+* Fix cookie block list adding bug
+* New migration to fix bug retroactively
+
+## 2016.5.16 (2.0RC1)
+* Remove Adblock Plus Engine
+* Switch to using storage.js and chrome storage API
+* Massive refactoring of code
+* Huge speed improvements
+* Fixes bug where privacy badger "forgets" settings
+* Fixes first run tab opening on every startup
+* Fix waiting for privacy badger bug
+* Fix high CPU usage bug
+* Uses separate data store for incognito mode
+* Ads selenium test to run pbtest.org sweet
+* Fixes weird subdomain handling edge case
+* Fixes bug where pages stop loading sometimes
+
+## 2015.4.6 (1.8)
+* Fix "waiting for privacy badger bug"
+* Huge speed improvement
+
+## 2015.4.6 (1.7)
+* Fix crash when closing options page
+* Add EFF Donate Button
+* New popup to nag user to go through tutorial
+
+## 2015.3.2 (1.0.6)
+* New feature: Search within blocked domain list
+* Replace soundcloud widget with a click to play button
+* Misc. bug fixes and translation improvements
+
+## 2015.12.3 (1.0.4)
+* Lots of site bug fixes
+* Chinese Translation
+* Spanish Translation
+* italian translation
+* UI Overhaul
+* Update Swedish locale
+* Typo fixes
+* Numerous bug fixes
+* Whitelist Domains now supports wildcard strings
+* Red badge now reflects the number of domains blocked or cookieblocked
+instead of all third parties.
+* Tooltips show full domain name
+
+## 2015.8.14 (1.0.1)
+* Fixes a bug where slider settings for a base domain wouldn't take effect
+* Fixes 'this extension is slowing down chrome' errors
+
+## 2015.8.5 (1.0)
+* 1.0 release
+* Bugfixes from 2015.7.24 (0.99)
+* Detects Canvas Fingerprinting
+* Detect Local Storage Supercookies
+* Improved UI
+* Options page for overriding privacy badger settings
+* Report Broken Site button 
+* Many Bugfixes (see github)
+* Translations into swedish, french and german
+
+## 2015.7.24 (0.99)
+* Release candidate for version 1.0!
+
+## 2015.4.1
+* Miscellanious bugfixes 
+* Improvements to heuristic
+
+## 2014.9.16
+* Adds lots of tests including selenium tests.
+* Adds lots of domains to the cookie block list.
+* Fixes bug with downloading cookie block list.
+* Fixes other minor stylistic bugs.
+
+## 2014.7.17
+* Created dialog to allow users to unblock certain third parties on certain
+* sites for addedd functionality.  E.g. disqus comments, facebook comments, etc.
+* Added lots of domains to cookie block list.
+* do not show domains that do not appear to be trackers in the popup
+* added missing google+ button override

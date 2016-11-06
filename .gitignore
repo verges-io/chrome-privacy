@@ -1,3 +1,7 @@
+chrome-state/Local\ State
+chrome-state/Safe\ Browsing\ Cookies
+chrome-state-*
 chrome-state/Default/Cache/*
+chrome-state/Default/Current\ *
 chrome-state/Default/Session\ Storage/*
 chrome-state/Default/Extension\ State/*

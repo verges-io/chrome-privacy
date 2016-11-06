@@ -28,7 +28,7 @@
 FROM debian:sid
 MAINTAINER Dennis Winter <git@verges.io>
 
-ADD https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb /src/google-talkplugin_current_amd64.deb
+ADD google-talkplugin_current_amd64.deb /src/google-talkplugin_current_amd64.deb
 
 # Install Chrome
 RUN echo 'deb http://httpredir.debian.org/debian testing main' >> /etc/apt/sources.list && \
@@ -36,7 +36,7 @@ RUN echo 'deb http://httpredir.debian.org/debian testing main' >> /etc/apt/sourc
     apt-get update && apt-get install -y \
     ca-certificates \
     curl \
-    tor \
+    gnupg \
     pulseaudio \
     hicolor-icon-theme \
     libgl1-mesa-dri \

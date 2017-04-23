@@ -25,14 +25,13 @@
 #
 
 # Base docker image
-FROM debian:sid
+FROM ubuntu:16.04
 MAINTAINER Dennis Winter <git@verges.io>
 
 ADD google-talkplugin_current_amd64.deb /src/google-talkplugin_current_amd64.deb
 
 # Install Chrome
-RUN echo 'deb http://httpredir.debian.org/debian testing main' >> /etc/apt/sources.list && \
-    echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
+RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
     apt-get update && apt-get install -y \
     ca-certificates \
     curl \
@@ -43,7 +42,6 @@ RUN echo 'deb http://httpredir.debian.org/debian testing main' >> /etc/apt/sourc
     libgl1-mesa-glx \
     libexif-dev \
     libv4l-0 \
-    -t testing \
     fonts-symbola \
     --no-install-recommends \
     && curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
@@ -60,8 +58,12 @@ COPY local.conf /etc/fonts/local.conf
 ADD chrome-state /data
 
 RUN \
-    mkdir -p /root/parent_home && \
-    chmod -R 777 /root/parent_home
+    useradd -ms /bin/bash chrome && \
+    mkdir -p /home/chrome/parent_home && \
+    chmod -R 777 /home/chrome/parent_home && \
+    chown -R chrome. /data /home/chrome
+
+USER chrome
 
 # Autorun chrome
 ENTRYPOINT [ "google-chrome" ]

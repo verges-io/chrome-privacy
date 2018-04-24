@@ -1,7 +1,5 @@
 FROM ubuntu:16.04
 
-ADD google-talkplugin_current_amd64.deb /src/google-talkplugin_current_amd64.deb
-
 RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
     apt-get update && apt-get install -y \
     ca-certificates \
@@ -20,7 +18,6 @@ RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
     && apt-get update && apt-get install -y \
     google-chrome-stable \
     --no-install-recommends \
-    && dpkg -i '/src/google-talkplugin_current_amd64.deb' \
     && apt-get purge --auto-remove -y curl \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /src/*.deb
